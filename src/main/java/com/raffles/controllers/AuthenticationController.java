@@ -34,7 +34,7 @@ public class AuthenticationController {
             authenticate(jwtRequest.getUsername(), jwtRequest.getPassword());
         }catch (Exception e) {
             e.printStackTrace();
-            throw new Exception("Usuario no encontrado.");
+            throw new Exception("Credenciales incorrectas.");
         }
 
         UserDetails userDetails = this.userDetailsService.loadUserByUsername(jwtRequest.getUsername());
