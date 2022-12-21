@@ -29,8 +29,8 @@ public class SubCategoryController {
         return subCategoryService.getAllSubCategories();
     }
 
-    @DeleteMapping("/{idCategory}")
-    public void deleteSubCategory(@PathVariable("idCategory") Long idCategory) {
-        subCategoryService.deleteSubCategory(idCategory);
+    @DeleteMapping("/{idSubCategory}")
+    public void deleteSubCategory(@PathVariable("idSubCategory") Long idSubCategory) {
+        subCategoryService.deleteSubCategory(idSubCategory);
     }
 }

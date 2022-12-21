@@ -6,16 +6,19 @@ import javax.persistence.*;
 @Table(name = "products")
 public class Product {
 
+    public Product() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idProduct;
 
-    private String Name;
+    private String name;
 
     private String description;
 
-    @OneToOne
-    @JoinColumn(name = "subcategory_id", referencedColumnName = "idSubCategory")
+    @ManyToOne
+    @JoinColumn(name = "id_category")
     private SubCategory principalSubcategory;
 
     public Long getIdProduct() {
@@ -27,11 +30,11 @@ public class Product {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String name) {
-        Name = name;
+        this.name = name;
     }
 
     public String getDescription() {

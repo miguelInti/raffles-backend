@@ -1,5 +1,7 @@
 package com.raffles.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 
 @Entity
@@ -9,6 +11,8 @@ public class SubCategory {
     public SubCategory() {
     }
 
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idSubCategory;
@@ -17,8 +21,8 @@ public class SubCategory {
 
     private String description;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-        @JoinColumn(name = "id_category")
+    @ManyToOne
+    @JoinColumn(name = "id_category")
     private Category principalCategory;
 
     public Long getIdSubCategory() {
