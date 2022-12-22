@@ -1,7 +1,6 @@
 package com.raffles.controllers;
 
 import com.raffles.entities.Product;
-import com.raffles.entities.SubCategory;
 import com.raffles.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -32,5 +31,10 @@ public class ProductController {
     @DeleteMapping("/{idCategory}")
     public void deleteProduct(@PathVariable("idProduct") Long idProduct) {
         productService.deleteProduct(idProduct);
+    }
+
+    @GetMapping("/getById/{idSubCategory}")
+    public List<Product> getAllProductsById(@PathVariable("idSubCategory") Long idSubCategory){
+        return productService.getAllProductsById(idSubCategory);
     }
 }

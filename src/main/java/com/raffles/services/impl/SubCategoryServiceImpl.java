@@ -39,4 +39,9 @@ public class SubCategoryServiceImpl implements SubCategoryService {
     public void deleteSubCategory(Long idSubCategory) {
         subCategoryRepository.deleteById(idSubCategory);
     }
+
+    @Override
+    public List<SubCategory> getAllSubCategoriesById(Long idCategory) {
+       return subCategoryRepository.findByPrincipalCategory_idCategory(idCategory);
+    }
 }

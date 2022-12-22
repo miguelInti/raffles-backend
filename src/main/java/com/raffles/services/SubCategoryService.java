@@ -12,4 +12,5 @@ public interface SubCategoryService {
     public List<SubCategory> getAllSubCategories();
 
     public void deleteSubCategory(Long idSubCategory);
+    public List<SubCategory> getAllSubCategoriesById(Long idCategory);
 }

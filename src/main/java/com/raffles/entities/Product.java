@@ -18,7 +18,7 @@ public class Product {
     private String description;
 
     @ManyToOne
-    @JoinColumn(name = "id_category")
+    @JoinColumn(name = "idSubCategory")
     private SubCategory principalSubcategory;
 
     public Long getIdProduct() {
